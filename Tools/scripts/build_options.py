@@ -73,10 +73,11 @@ BUILD_OPTIONS = [
 
     Feature('Telemetry', 'CRSF', 'HAL_CRSF_TELEM_ENABLED', 'Enable CRSF telemetry', 0, 'FrSky SPort PassThrough,FrSky,FrSky SPort,RC_CRSF'),  # noqa
     Feature('Telemetry', 'CRSFText', 'HAL_CRSF_TELEM_TEXT_SELECTION_ENABLED', 'Enable CRSF text param selection', 0, 'CRSF,OSD_PARAM,FrSky SPort PassThrough,FrSky,FrSky SPort'),  # NOQA: E501
+    Feature('Telemetry', 'CRSF Scripting', 'AP_CRSF_SCRIPTING_ENABLED', 'Enable CRSF Menu Scripting', 0, 'CRSFText,CRSF,OSD_PARAM,FrSky SPort PassThrough,FrSky,FrSky SPort'),  # noqa
     Feature('Telemetry', 'HOTT', 'HAL_HOTT_TELEM_ENABLED', 'Enable HOTT telemetry', 0, None),
     Feature('Telemetry', 'SPEKTRUM', 'HAL_SPEKTRUM_TELEM_ENABLED', 'Enable Spektrum telemetry', 0, None),
     Feature('Telemetry', 'LTM', 'AP_LTM_TELEM_ENABLED', 'Enable LTM telemetry', 0, None),
-    Feature('Telemetry', 'AUX_FUNCTION_STRINGS', 'AP_RC_CHANNEL_AUX_FUNCTION_STRINGS_ENABLED', 'Enable Auxilliary function activation text messages', 0, None),  # noqa
+    Feature('Telemetry', 'AUX_FUNCTION_STRINGS', 'AP_RC_CHANNEL_AUX_FUNCTION_STRINGS_ENABLED', 'Enable Auxiliary function activation text messages', 0, None),  # noqa
     Feature('Telemetry', 'FrSky', 'AP_FRSKY_TELEM_ENABLED', 'Enable FrSky telemetry', 0, None),
     Feature('Telemetry', 'FrSky D', 'AP_FRSKY_D_TELEM_ENABLED', 'Enable FrSkyD telemetry', 0, 'FrSky'),
     Feature('Telemetry', 'FrSky SPort', 'AP_FRSKY_SPORT_TELEM_ENABLED', 'Enable FrSkySPort telemetry', 0, 'FrSky'),  # noqa
@@ -102,6 +103,7 @@ BUILD_OPTIONS = [
     Feature('MSP', 'MSP_OPTICALFLOW', 'HAL_MSP_OPTICALFLOW_ENABLED', 'Enable MSP OpticalFlow', 0, 'MSP,OSD,OPTICALFLOW'), # also OPTFLOW dep   # NOQA: E501
     Feature('MSP', 'MSP_RANGEFINDER', 'HAL_MSP_RANGEFINDER_ENABLED', 'Enable MSP rangefinder', 0, 'MSP,OSD,RANGEFINDER'),
     Feature('MSP', 'MSP_DISPLAYPORT', 'HAL_WITH_MSP_DISPLAYPORT', 'Enable MSP DisplayPort OSD (aka CANVAS MODE)', 0, 'MSP,OSD'),   # NOQA: E501
+    Feature('MSP', 'DISPLAYPORT_INAV_FONTS', 'AP_MSP_INAV_FONTS_ENABLED', 'Enable INAV Fonts Translation for DisplayPort', 0, 'MSP_DISPLAYPORT,MSP,OSD'),  # NOQA: E501
 
     Feature('ICE', 'ICE Engine', 'AP_ICENGINE_ENABLED', 'Enable Internal combustion engine support', 0, 'RPM'),
     Feature('ICE', 'EFI', 'HAL_EFI_ENABLED', 'Enable EFI monitoring', 0, None),
@@ -117,6 +119,7 @@ BUILD_OPTIONS = [
     Feature('Generator', 'GENERATOR_RICHENPOWER', 'AP_GENERATOR_RICHENPOWER_ENABLED', 'Enable Richenpower generator', 0, "GENERATOR"),  # noqa
     Feature('Generator', 'GENERATOR_IE2400', 'AP_GENERATOR_IE_2400_ENABLED', 'Enable IntelligentEnergy 2400', 0, "GENERATOR"),  # noqa
     Feature('Generator', 'GENERATOR_IE650', 'AP_GENERATOR_IE_650_800_ENABLED', 'Enable IntelligentEnergy 650 and 800', 0, "GENERATOR"),  # noqa
+    Feature('Generator', 'GENERATOR_LOWEHEISER', 'AP_GENERATOR_LOWEHEISER_ENABLED', 'Enable Loweheiser generator', 0, "GENERATOR,EFI"),  # noqa
 
     Feature('OSD', 'OSD', 'OSD_ENABLED', 'Enable OSD', 0, None),
     Feature('OSD', 'PLUSCODE', 'HAL_PLUSCODE_ENABLE', 'Enable PlusCode', 0, 'OSD'),
@@ -199,6 +202,7 @@ BUILD_OPTIONS = [
     Feature('Gimbal', 'STORM32_SERIAL', 'HAL_MOUNT_STORM32SERIAL_ENABLED', 'Enable SToRM32 Serial gimbal', 0, "MOUNT"),
     Feature('Gimbal', 'TOPOTEK', 'HAL_MOUNT_TOPOTEK_ENABLED', 'Enable Topotek gimbal', 0, "MOUNT"),
     Feature('Gimbal', 'XACTI', 'HAL_MOUNT_XACTI_ENABLED', 'Enable Xacti gimbal', 0, "MOUNT,DroneCAN"),
+    Feature('Gimbal', 'XFROBOT', 'HAL_MOUNT_XFROBOT_ENABLED', 'Enable XFRobot gimbal', 0, "MOUNT"),
     Feature('Gimbal', 'VIEWPRO', 'HAL_MOUNT_VIEWPRO_ENABLED', 'Enable Viewpro gimbal', 0, "MOUNT"),
 
     Feature('VTOL Frame', 'QUAD', 'AP_MOTORS_FRAME_QUAD_ENABLED', 'QUADS(BI,TRI also)', 1, None),
@@ -230,6 +234,7 @@ BUILD_OPTIONS = [
     Feature('Plane', 'PLANE_GLIDER_PULLUP', 'AP_PLANE_GLIDER_PULLUP_ENABLED', 'Enable Glider pullup support', 0, None),
     Feature('Plane', 'QUICKTUNE', 'AP_QUICKTUNE_ENABLED', 'Enable VTOL quicktune', 0, None),
     Feature('Plane', 'AUTOLAND_MODE', 'MODE_AUTOLAND_ENABLED', 'Enable Fixed Wing Autolanding mode', 0, None),
+    Feature('Plane', 'PLANE_SYSTEMID', 'AP_PLANE_SYSTEMID_ENABLED', 'Enable systemID support for quadplanes', 0, 'QUADPLANE,Logging'),  # NOQA:E501
 
     Feature('RC', 'RC_Protocol', 'AP_RCPROTOCOL_ENABLED', "Enable Serial RC Protocols", 0, None),   # NOQA: E501
     Feature('RC', 'RC_CRSF', 'AP_RCPROTOCOL_CRSF_ENABLED', "Enable CRSF", 0, "RC_Protocol"),   # NOQA: E501
